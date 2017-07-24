@@ -1,0 +1,38 @@
+.login {
+  width: 300px;
+  height: 200px;
+  border: 1px solid #F6A821;
+  background-color: inherit;
+
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: auto;
+  display: block;
+}
+
+.login > input,
+.login > label,
+.login > button {
+  margin: 0 auto;
+  display: block;
+  width: 90%;
+  margin-top: 10px;
+}
+
+.login > input {
+  border-radius: 5px;
+}
+
+.login > input:hover,
+.login > input:focus {
+  border: 2px solid #F6A821;
+}
+
+.login > button {
+  color: #2F323B;
+  background: #F6A821;
+}
