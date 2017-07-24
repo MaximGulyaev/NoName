@@ -1,0 +1,187 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #2A2D35;
+    border-right: 1px solid #F6A821;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+  color : #DE9536;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  border-left: 3px solid #F6A821;
+  background: #24262D !important;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  border-left: 1px solid #F6A821;
+  text-decoration: none;
+  background-color: #24262D !important;
+}
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.circleOnline {
+  /*margin: 10px;*/
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.circleOffline {
+  /*margin: 10px;*/
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.btnReload {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.glyphiconRepeat {
+  position: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.panel-custom {
+  text-align: center;
+  padding: 10px;
+}
+
+.panel.panel-filled {
+  text-align: center;
+  background-color: rgba(68, 70, 79, 0.5);
+}
+
+.panel.panel-filled button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.panel.telegram {
+  border-left: 3px;
+  border-left-style: solid;
+  border-left-color: #1D94D3;
+}
+
+.panel.vk {
+  border-left: 3px;
+  border-left-style: solid;
+  border-left-color: #507299;
+}
+
+.panel.asu {
+  border-left: 3px;
+  border-left-style: solid;
+  border-left-color: #DB524B;
+}
+
+div {
+  display: block;
+}
+
+body {
+  background: #2f323b;
+  color: #949ba2;
+}
+
+/*ui li {
+  border-left 3px;
+  border-left-style: solid;;
+  border-left-color: #F6A821;
+  /*color*/
+}*/
