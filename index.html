@@ -18,11 +18,13 @@
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/ie-emulation-modes-warning.js"></script>
+    <script src="js/progressbar.min.js"></script>
+    <script src="js/init.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -30,9 +32,66 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-    <body>
-
+  <body onload="init()">
+  <div class="container-fluid">
     <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">DashBoard</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="">Settings</a></li>
+            <li><a href="">Logout</a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="col-md-1 sidebar" style="background-color: rgba(68, 70, 79, 0.5);">
+        <ui class="nav nav-sidebar">
+          <li class="active"><a href="">Status</a></li>
+          <li><a href="">Telegram</a></li>
+          <li><a href="">VK</a></li>
+          <li><a href="">Cache</a></li>
+          <li><a href="">Statistics</a></li>
+        </ui>
+      </div>
+      <div class="col-md-10 col-md-offset-1 main">
+        <div class="row">
+          <div class="panel-horizontal">
+            <div class="col-md-4">
+              <div class="panel panel-filled telegram">
+                <h3>Telegram</h3>
+                <div class="circleOnline"></div>
+                <button class="btn btn-lg" title="Refresh">Refresh</button>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="panel panel-filled vk">
+                <h3>VK</h3>
+                <div class="circleOffline"></div>
+                <button class="btn btn-lg" title="Refresh">Refresh</button>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="panel panel-filled asu">
+                <h3>ASU</h3>
+                <div class="circleOnline"></div>
+                <button class="btn btn-lg" title="Refresh">Refresh</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -44,55 +103,55 @@
           <a class="navbar-brand" href="#">Sfedu Bots. Administration</a>
       </div>
     </nav>
-
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Telegram Bot</a></li>
+            <li><a href="telegram.html">Telegram Bot</a></li>
             <li><a href="#">VK Bot</a></li>
+            <li><a href="#">Cache</a></li>
             <li><a href="#">Reports, Analytics and etc</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
-
           <div class="row placeholders">
-            <div class="col-xs-6 col-sm-6 placeholder">
-              <div class="circleAccess" > </div>
-              <h4>Telegram Bot</h4>
-              <span class="text-muted">Активен</span>
-              <button title="Перезагрузить бота"type="button" class="btn btn-mini btn-success" style="padding-left: :20px;margin: 0px">
-              <span  class="glyphicon glyphicon-repeat" aria-hidden="true" style="position: inherit;margin: 0;padding: 0"> </span></button> 
+              <div class="col-xs-3 col-sm-3 placeholder">
+                <div class="circleAccess" > </div>
+                <h4>Telegram Bot</h4>
+                <span class="text-muted">Активен</span>
+                <button title="Обновить статус"type="button" class="btn btn-mini btn-success btnReload" >
+                  <span  class="glyphicon glyphicon-repeat glyphiconRepeat" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="col-xs-3 col-sm-3 placeholder">
+                <div class="circleAccess" > </div>
+                <h4>VK Bot</h4>
+                <span class="text-muted" >Активен</span>
+                <button title="Обновить статус"type="button" class="btn btn-mini btn-success btnReload" >
+                  <span  class="glyphicon glyphicon-repeat glyphiconRepeat" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="col-xs-3 col-sm-3 placeholder">
+                <div class="circleAccess" > </div>
+                <h4>ASU Status</h4>
+                <span class="text-muted">Активен</span>
+                <button title="Обновить статус"type="button" class="btn btn-mini btn-success btnReload" >
+                  <span  class="glyphicon glyphicon-repeat glyphiconRepeat" aria-hidden="true"></span>
+                </button>
+              </div>
             </div>
-            <div class="col-xs-6 col-sm-6 placeholder">
-              <div class="circleAccess" > </div>
-              <h4>VK Bot</h4>
-              <span class="text-muted" >Активен</span>
-              <button title="Перезагрузить бота"type="button" class="btn btn-mini btn-success" style="padding-left: :20px;margin: 0px">
-              <span  class="glyphicon glyphicon-repeat" aria-hidden="true" style="position: inherit;margin: 0;padding: 0"> </span></button> 
-            </div>
-
-          </div>
-
-          
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  
+    <script src="js/bootstrap.min.js"></script>
 
 </body>
 
